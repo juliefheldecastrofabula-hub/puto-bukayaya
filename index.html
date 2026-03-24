@@ -280,7 +280,7 @@
         </div>
       </div>
       <div class="card hero-image">
-        <img src="/mnt/data/C5324E97-0DD3-42F4-87CF-0D6319A2B09F.jpeg" alt="Puto Bukayaya product photo" />
+        <img src="product.jpg" alt="Puto Bukayaya product photo" />
       </div>
     </section>
 
@@ -333,13 +333,62 @@
         </div>
 
         <div class="card">
-          <div style="text-align:center;">
-            <p style="margin-bottom:16px; font-weight:bold; color:#0b4c98;">Click the button below to place your order</p>
-            <a href="https://forms.gle/GKjVzzPvy1CMnweG8" target="_blank">
-              <button class="btn" type="button">Order Now</button>
-            </a>
-            <p class="note" style="margin-top:14px;">You will be redirected to our official order form.</p>
-          </div>
+          <!-- Connected to Google Form (replace ENTRY IDs below) -->
+          <form onsubmit="goToOrderForm(event)">
+          
+            <div>
+              <label for="fullname">Full Name</label>
+              <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required />
+            </div>
+
+            <div class="row">
+              <div>
+                <label for="contact">Contact Number</label>
+                <input type="tel" id="contact" name="contact" placeholder="09XXXXXXXXX" required />
+              </div>
+              <div>
+                <label for="quantity">Quantity</label>
+                <select id="quantity" name="quantity" required>
+                  <option value="">Select quantity</option>
+                  <option>1 box</option>
+                  <option>2 boxes</option>
+                  <option>3 boxes</option>
+                  <option>5 boxes</option>
+                  <option>10 boxes</option>
+                  <option>Bulk order</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="address">Delivery Address</label>
+              <textarea id="address" name="address" placeholder="House number, street, barangay, city, province" required></textarea>
+            </div>
+
+            <div class="row">
+              <div>
+                <label for="date">Preferred Delivery Date</label>
+                <input type="date" id="date" name="date" required />
+              </div>
+              <div>
+                <label for="payment">Payment Method</label>
+                <select id="payment" name="payment" required>
+                  <option value="">Select payment method</option>
+                  <option>Cash on Delivery</option>
+                  <option>GCash</option>
+                  <option>Bank Transfer</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="notes">Special Instructions</label>
+              <textarea id="notes" name="notes" placeholder="Add notes for packaging, delivery, or special requests"></textarea>
+            </div>
+
+            <button type="submit" class="btn">Order Now</button>
+            <p class="note">Clicking Order Now will open your Google Form for final submission.</p>
+          </form>
         </div>
       </div>
     </section>
@@ -350,9 +399,9 @@
   </footer>
 
   <script>
-    function submitOrder(event) {
+    function goToOrderForm(event) {
       event.preventDefault();
-      alert('Thank you for your order! Your request for PUTO BUKAYAYA has been received.');
+      window.open('https://forms.gle/GKjVzzPvy1CMnweG8', '_blank');
     }
   </script>
 </body>
