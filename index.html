@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PUTO BUKAYAYA</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #eaf4ff 0%, #d7ebff 45%, #c6e2ff 100%);
+      color: #123456;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0a4ea3, #2b79d3, #5aa7ff);
+      color: white;
+      text-align: center;
+      padding: 60px 20px 40px;
+      box-shadow: 0 8px 24px rgba(0, 58, 128, 0.18);
+    }
+
+    header h1 {
+      font-size: 3rem;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+      opacity: 0.95;
+    }
+
+    nav {
+      background: #ffffff;
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      padding: 14px 16px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 4px 15px rgba(10, 78, 163, 0.08);
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #0a4ea3;
+      font-weight: bold;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: center;
+      padding: 50px 0;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: 0 10px 30px rgba(12, 78, 150, 0.12);
+      border: 1px solid rgba(90, 167, 255, 0.25);
+    }
+
+    .hero-text h2 {
+      font-size: 2.2rem;
+      color: #0b4c98;
+      margin-bottom: 16px;
+    }
+
+    .hero-text p {
+      margin-bottom: 14px;
+      font-size: 1.05rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .badge {
+      background: #dff0ff;
+      color: #0a4ea3;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: bold;
+    }
+
+    .hero-image img {
+      width: 100%;
+      display: block;
+      border-radius: 18px;
+      object-fit: cover;
+      box-shadow: 0 14px 30px rgba(0, 53, 125, 0.18);
+    }
+
+    section {
+      padding: 18px 0 34px;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      color: #0a4ea3;
+      margin-bottom: 18px;
+      text-align: center;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .features h3 {
+      color: #0b4c98;
+      margin-bottom: 10px;
+    }
+
+    .segments ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .segments li {
+      background: #f4faff;
+      padding: 14px 16px;
+      border-radius: 14px;
+      border-left: 6px solid #2b79d3;
+      font-weight: bold;
+      color: #10437f;
+    }
+
+    .order-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 22px;
+    }
+
+    .order-info ul {
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 6px;
+      color: #0b4c98;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #a9cff8;
+      border-radius: 12px;
+      font-size: 1rem;
+      outline: none;
+      background: #fbfeff;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #2b79d3;
+      box-shadow: 0 0 0 4px rgba(43, 121, 211, 0.12);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    .btn {
+      background: linear-gradient(135deg, #0a4ea3, #2b79d3);
+      color: white;
+      border: none;
+      padding: 14px 18px;
+      border-radius: 14px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 18px rgba(10, 78, 163, 0.2);
+    }
+
+    .note {
+      font-size: 0.92rem;
+      color: #3d618e;
+    }
+
+    footer {
+      text-align: center;
+      padding: 26px 16px 34px;
+      color: #214d81;
+      font-weight: bold;
+    }
+
+    @media (max-width: 900px) {
+      .hero,
+      .features,
+      .order-grid,
+      .segments ul,
+      .row {
+        grid-template-columns: 1fr;
+      }
+
+      header h1 {
+        font-size: 2.3rem;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>PUTO BUKAYAYA</h1>
+    <p>A delicious and presentable papaya bukayo treat that is perfect for sharing, celebrations, and gift giving.</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#features">Why Choose Us</a>
+    <a href="#segments">Customer Segments</a>
+    <a href="#order">Order Now</a>
+  </nav>
+
+  <main class="container">
+    <section class="hero" id="about">
+      <div class="card hero-text">
+        <h2>Fresh, Tasty, and Made to Impress</h2>
+        <p><strong>PUTO BUKAYAYA</strong> is a soft and flavorful snack made with papaya bukayo. It is great for students, families, parties, and special occasions.</p>
+        <p>Our product is simple, eye-catching, and enjoyable to eat. It can also be given as a thoughtful food gift.</p>
+        <div class="hero-badges">
+          <span class="badge">Soft & Delicious</span>
+          <span class="badge">Great for Events</span>
+          <span class="badge">Gift-Ready</span>
+          <span class="badge">Homemade Feel</span>
+        </div>
+      </div>
+      <div class="card hero-image">
+        <img src="/mnt/data/C5324E97-0DD3-42F4-87CF-0D6319A2B09F.jpeg" alt="Puto Bukayaya product photo" />
+      </div>
+    </section>
+
+    <section id="features">
+      <h2 class="section-title">Why Choose PUTO BUKAYAYA?</h2>
+      <div class="features">
+        <div class="card">
+          <h3>Beautiful Presentation</h3>
+          <p>The product has an attractive look that makes it suitable for parties, gifts, and food displays.</p>
+        </div>
+        <div class="card">
+          <h3>Perfect for Sharing</h3>
+          <p>It is easy to serve and enjoyable for families, friends, and celebration guests.</p>
+        </div>
+        <div class="card">
+          <h3>Unique Sweet Treat</h3>
+          <p>The papaya bukayo filling gives it a special twist compared to ordinary snacks and desserts.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="segments" id="segments">
+      <h2 class="section-title">Customer Segments</h2>
+      <div class="card">
+        <ul>
+          <li>Students</li>
+          <li>Families & Friends</li>
+          <li>Dessert Lovers</li>
+          <li>Event & Party Buyers</li>
+          <li>Gift Buyers</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="order">
+      <h2 class="section-title">Order PUTO BUKAYAYA</h2>
+      <div class="order-grid">
+        <div class="card order-info">
+          <h3 style="color:#0b4c98; margin-bottom:10px;">Order Details</h3>
+          <p>Fill out the form to place your order. Please provide complete and correct information.</p>
+          <ul>
+            <li>Choose your quantity</li>
+            <li>Enter your full name and contact number</li>
+            <li>Add your delivery address</li>
+            <li>Select your preferred payment method</li>
+            <li>Write special instructions if needed</li>
+          </ul>
+          <p style="margin-top:14px;"><strong>Sample price:</strong> ₱120 per box</p>
+          <p class="note">You can edit the price, product description, and contact details anytime.</p>
+        </div>
+
+        <div class="card">
+          <div style="text-align:center;">
+            <p style="margin-bottom:16px; font-weight:bold; color:#0b4c98;">Click the button below to place your order</p>
+            <a href="https://forms.gle/GKjVzzPvy1CMnweG8" target="_blank">
+              <button class="btn" type="button">Order Now</button>
+            </a>
+            <p class="note" style="margin-top:14px;">You will be redirected to our official order form.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 PUTO BUKAYAYA | Made with care for every celebration
+  </footer>
+
+  <script>
+    function submitOrder(event) {
+      event.preventDefault();
+      alert('Thank you for your order! Your request for PUTO BUKAYAYA has been received.');
+    }
+  </script>
+</body>
+</html>
